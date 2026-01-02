@@ -6,8 +6,27 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		C3C5B75D2F0410D500CA5541 /* PFMTools.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C3C5B75B2F0410D500CA5541 /* PFMTools.cpp */; };
+		C3C5B7602F0415EC00CA5541 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3C5B75F2F0415EC00CA5541 /* Foundation.framework */; };
+		C3C5B7622F0415F500CA5541 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3C5B7612F0415F500CA5541 /* QuartzCore.framework */; };
+		C3C5B7642F04160000CA5541 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3C5B7632F04160000CA5541 /* Metal.framework */; };
+		C3C5B7682F04273200CA5541 /* PFMTextureLoader.mm in Sources */ = {isa = PBXBuildFile; fileRef = C3C5B7662F04273200CA5541 /* PFMTextureLoader.mm */; };
+		C3C5B76B2F06667C00CA5541 /* PFMTools.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C3C5B75B2F0410D500CA5541 /* PFMTools.cpp */; };
+		C3C5B76C2F06668000CA5541 /* PFMTextureLoader.mm in Sources */ = {isa = PBXBuildFile; fileRef = C3C5B7662F04273200CA5541 /* PFMTextureLoader.mm */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		C3C5B7062EFCD76F00CA5541 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		C3C5B7412EFD593400CA5541 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -20,6 +39,15 @@
 
 /* Begin PBXFileReference section */
 		C3C5B7082EFCD76F00CA5541 /* 2D_SDFGenerator */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = 2D_SDFGenerator; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3C5B7432EFD593400CA5541 /* SDF_Render */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SDF_Render; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3C5B7582F0403E200CA5541 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		C3C5B75A2F0410D500CA5541 /* PFMTools.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = PFMTools.hpp; sourceTree = "<group>"; };
+		C3C5B75B2F0410D500CA5541 /* PFMTools.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PFMTools.cpp; sourceTree = "<group>"; };
+		C3C5B75F2F0415EC00CA5541 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C3C5B7612F0415F500CA5541 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		C3C5B7632F04160000CA5541 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
+		C3C5B7652F04273200CA5541 /* PFMTextureLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PFMTextureLoader.h; sourceTree = "<group>"; };
+		C3C5B7662F04273200CA5541 /* PFMTextureLoader.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = PFMTextureLoader.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -28,10 +56,25 @@
 			path = 2D_SDFGenerator;
 			sourceTree = "<group>";
 		};
+		C3C5B7442EFD593400CA5541 /* SDF_Render */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = SDF_Render;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		C3C5B7052EFCD76F00CA5541 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3C5B7642F04160000CA5541 /* Metal.framework in Frameworks */,
+				C3C5B7622F0415F500CA5541 /* QuartzCore.framework in Frameworks */,
+				C3C5B7602F0415EC00CA5541 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3C5B7402EFD593400CA5541 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -44,7 +87,14 @@
 		C3C5B6FF2EFCD76F00CA5541 = {
 			isa = PBXGroup;
 			children = (
+				C3C5B7582F0403E200CA5541 /* README.md */,
+				C3C5B7652F04273200CA5541 /* PFMTextureLoader.h */,
+				C3C5B7662F04273200CA5541 /* PFMTextureLoader.mm */,
+				C3C5B75A2F0410D500CA5541 /* PFMTools.hpp */,
+				C3C5B75B2F0410D500CA5541 /* PFMTools.cpp */,
 				C3C5B70A2EFCD76F00CA5541 /* 2D_SDFGenerator */,
+				C3C5B7442EFD593400CA5541 /* SDF_Render */,
+				C3C5B75E2F0415EC00CA5541 /* Frameworks */,
 				C3C5B7092EFCD76F00CA5541 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -53,8 +103,19 @@
 			isa = PBXGroup;
 			children = (
 				C3C5B7082EFCD76F00CA5541 /* 2D_SDFGenerator */,
+				C3C5B7432EFD593400CA5541 /* SDF_Render */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		C3C5B75E2F0415EC00CA5541 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C3C5B7632F04160000CA5541 /* Metal.framework */,
+				C3C5B7612F0415F500CA5541 /* QuartzCore.framework */,
+				C3C5B75F2F0415EC00CA5541 /* Foundation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -82,6 +143,28 @@
 			productReference = C3C5B7082EFCD76F00CA5541 /* 2D_SDFGenerator */;
 			productType = "com.apple.product-type.tool";
 		};
+		C3C5B7422EFD593400CA5541 /* SDF_Render */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C3C5B7492EFD593400CA5541 /* Build configuration list for PBXNativeTarget "SDF_Render" */;
+			buildPhases = (
+				C3C5B73F2EFD593400CA5541 /* Sources */,
+				C3C5B7402EFD593400CA5541 /* Frameworks */,
+				C3C5B7412EFD593400CA5541 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				C3C5B7442EFD593400CA5541 /* SDF_Render */,
+			);
+			name = SDF_Render;
+			packageProductDependencies = (
+			);
+			productName = SDF_Render;
+			productReference = C3C5B7432EFD593400CA5541 /* SDF_Render */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -92,6 +175,9 @@
 				LastUpgradeCheck = 2620;
 				TargetAttributes = {
 					C3C5B7072EFCD76F00CA5541 = {
+						CreatedOnToolsVersion = 26.2;
+					};
+					C3C5B7422EFD593400CA5541 = {
 						CreatedOnToolsVersion = 26.2;
 					};
 				};
@@ -111,6 +197,7 @@
 			projectRoot = "";
 			targets = (
 				C3C5B7072EFCD76F00CA5541 /* 2D_SDFGenerator */,
+				C3C5B7422EFD593400CA5541 /* SDF_Render */,
 			);
 		};
 /* End PBXProject section */
@@ -120,6 +207,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3C5B75D2F0410D500CA5541 /* PFMTools.cpp in Sources */,
+				C3C5B7682F04273200CA5541 /* PFMTextureLoader.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3C5B73F2EFD593400CA5541 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3C5B76C2F06668000CA5541 /* PFMTextureLoader.mm in Sources */,
+				C3C5B76B2F06667C00CA5541 /* PFMTools.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,9 +344,14 @@
 		C3C5B7102EFCD76F00CA5541 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = THB3YLVB88;
 				ENABLE_HARDENED_RUNTIME = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(SDKROOT)/usr/lib",
+					"$(SDKROOT)/usr/include/c++/v1",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -256,9 +359,42 @@
 		C3C5B7112EFCD76F00CA5541 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = THB3YLVB88;
 				ENABLE_HARDENED_RUNTIME = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(SDKROOT)/usr/lib",
+					"$(SDKROOT)/usr/include/c++/v1",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		C3C5B7472EFD593400CA5541 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = THB3YLVB88;
+				ENABLE_HARDENED_RUNTIME = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(SDKROOT)/usr/lib",
+					"$(SDKROOT)/usr/include/c++/v1",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		C3C5B7482EFD593400CA5541 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = THB3YLVB88;
+				ENABLE_HARDENED_RUNTIME = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(SDKROOT)/usr/lib",
+					"$(SDKROOT)/usr/include/c++/v1",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -280,6 +416,15 @@
 			buildConfigurations = (
 				C3C5B7102EFCD76F00CA5541 /* Debug */,
 				C3C5B7112EFCD76F00CA5541 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C3C5B7492EFD593400CA5541 /* Build configuration list for PBXNativeTarget "SDF_Render" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C3C5B7472EFD593400CA5541 /* Debug */,
+				C3C5B7482EFD593400CA5541 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
