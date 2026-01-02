@@ -1,5 +1,8 @@
 # GPU-Accelerated 2D Signed Distance Field Generator with Metal
 
+
+
+
 ## Overview  
 This project implements a high-performance, GPU-accelerated 2D Signed Distance Field (SDF) generator using Apple's Metal framework and the Jump Flooding Algorithm (JFA). It consists of two main components: a SDF generator and a renderer, designed for efficient generation and visualisation of distance fields from input textures. This toolkit is suitable for graphics applications, game development, and visual effects, leveraging Metal's compute capabilities for significant performance gains on supported hardware.
 
@@ -27,6 +30,9 @@ Renders SDF data (stored in PFM format) into PNG images with configurable colour
 
 Both tools are compiled from a single Xcode project for ease of use.
 
+## Effect
+Below are example visualisations of generated SDFs:
+
 ## Getting Started  
 
 ### Prerequisites  
@@ -37,6 +43,6 @@ Both tools are compiled from a single Xcode project for ease of use.
 1. Clone the repository:  
    ```bash  
    git clone https://github.com/yourusername/metal-sdf-generator.git
-   Open SDF.xcodeproj in Xcode
-2. Build the project (⌘+B) to compile
-3. The compiled executables will be available in the build directory
+2. Open SDF.xcodeproj in Xcode
+3. Build the project (⌘+B) to compile
+4. The compiled executables will be available in the build directory
