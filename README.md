@@ -54,6 +54,6 @@ Below are example visualisations of generated SDFs:
 1. Clone the repository:  
    ```bash  
    git clone https://github.com/yourusername/metal-sdf-generator.git
-2. Open SDF.xcodeproj in Xcode
+2. Open 2D_SDFGenerator.xcodeproj in Xcode
 3. Build the project (⌘+B) to compile
 4. The compiled executables will be available in the build directory
