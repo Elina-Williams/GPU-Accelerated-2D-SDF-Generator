@@ -1,61 +1,48 @@
-
-## Input Format Specifications:
-// --------------------------
-// The input image is expected to be an 8-bit PGM format, for the following reasons:
-// 1. The JFA algorithm only requires binary information to identify boundary seed points.
-// 2. 8-bit depth (0–255) is sufficient to provide well-defined shape boundaries.
-// 3. Shape information can be extracted via simple thresholding: pixel > 128 ? INSIDE : OUTSIDE.
-// 4. The format is straightforward, easy to create and debug using common imaging tools.
+# GPU-Accelerated 2D Signed Distance Field Generator with Metal
 
 
-## Output Format Specifications:
-// ---------------------------
-// The PFM (Portable Float Map) format is selected for output, for the following reasons:
-// 1. It preserves full 32-bit floating-point precision without quantization loss.
-// 2. SDF values will be directly usable in shader operations such as smoothstep interpolation.
-// - An 8-bit output with only 256 discrete levels (only 127 levels for each sign)
-//   would result in visible stair-stepping artifacts along boundaries.
-// 3. The PFM format is simple to implement for both reading and writing.
-// 4. It aligns with common practices in high-quality graphics applications.
 
 
-## PFM Image Format
-// ---------------------------
-// the format begins with three lines of text specifying the image size and type,
-//      and then continues with raw binary image data for the rest of the file.
-//
-// The text header of a .pfm file takes the following form:
-[type]
-[xres] [yres]
-[scale_factor]
-// Each of the three lines of text ends with a 1-byte Unix-style carriage return: 0x0a in hex
-// The "[type]" is one of "PF" for a 3-channel RGB color image, or "Pf"
-//      for a monochrome single-channel image.
-// "[xres] [yres]" indicates the x and y resolutions of the image.
-// "[scale_factor]" is a signed floating-point number where:
-// - The SIGN indicates byte order: positive = big-endian, negative = little-endian
-// - The ABSOLUTE VALUE represents a scale factor (typically 1.0)
-// Pixel values in the binary data are multiplied by |scale_factor| to obtain actual intensities
+## Overview  
+This project implements a high-performance, GPU-accelerated 2D Signed Distance Field (SDF) generator using Apple's Metal framework and the Jump Flooding Algorithm (JFA). It consists of two main components: a SDF generator and a renderer, designed for efficient generation and visualisation of distance fields from input textures. This toolkit is suitable for graphics applications, game development, and visual effects, leveraging Metal's compute capabilities for significant performance gains on supported hardware.
 
-//    -------- Notice --------
-// In our implementation, we use this field to encode the normalisation factor:
-// 1. The raw pixel values are stored in the range [0, spread]
-// 2. We set |scale_factor| = 1.0 / spread
-// 3. This ensures that:
-//    - When viewed in MacOS Preview: pixel × |scale_factor| = pixel / spread ∈ [0, 1]
-//      (avoiding unwanted HDR display)
-//    - The original spread value can be recovered: spread = 1.0 / |scale_factor|
-//    - The raw pixel values (in [0, spread]) are directly usable in our pipeline
-//    ------------------------
+## Key Features  
+- **GPU Acceleration**: Utilises Metal compute shaders for parallel processing, maximising performance on macOS and iOS devices.  
+- **Jump Flooding Algorithm (JFA)**: Implements an efficient algorithm for generating SDFs with high accuracy and minimal iterations.  
+- **High Performance**: Optimised for large image sizes; tested with 1024×1024 and 2048×2048 inputs.  
+- **Two-Tool Suite**: Includes both a SDF generator and a renderer for complete workflow support.  
 
-// Binary Data Format (follows header):
-// - Raw binary IEEE 32-bit floating point values
-// - Row-major order, with the pixels in each row ordered left to right
-//   and the rows ordered bottom to top. (very strange)
-// - No padding between rows
-// - For "PF" (RGB): Data is interleaved as [R1 G1 B1 R2 G2 B2 ...] per row
-// - For "Pf" (monochrome): Data is single channel values per pixel
+## Performance Metrics  
+The following average timings were recorded on MacBook Pro M4:  
+- **1024×1024 image** generating a 64px SDF: **0.029 seconds**  
+- **2048×2048 image** generating an SDF: **0.127 seconds**  
 
-// References:
-// https://www.pauldebevec.com/Research/HDR/PFM/
-// https://netpbm.sourceforge.net/doc/pfm.html
+These results demonstrate the efficiency of the GPU-accelerated approach, enabling rapid generation for real-time applications.
+
+## Project Structure
+The project contains two main executables:
+
+### 1. `2D_SDFGenerator`
+Generates Signed Distance Field textures from binary PGM mask images using the JFA algorithm on GPU.
+
+### 2. `SDF_Renderer`
+Renders SDF data (stored in PFM format) into PNG images with configurable colours and resolution scaling.
+
+Both tools are compiled from a single Xcode project for ease of use.
+
+## Effect
+Below are example visualisations of generated SDFs:
+
+## Getting Started  
+
+### Prerequisites  
+- macOS 10.15+ with Metal support  
+- Xcode 12 or later  
+
+### Installation  
+1. Clone the repository:  
+   ```bash  
+   git clone https://github.com/yourusername/metal-sdf-generator.git
+2. Open SDF.xcodeproj in Xcode
+3. Build the project (⌘+B) to compile
+4. The compiled executables will be available in the build directory
