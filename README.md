@@ -33,6 +33,17 @@ Both tools are compiled from a single Xcode project for ease of use.
 ## Effect
 Below are example visualisations of generated SDFs:
 
+<table align="center" border="0">
+  <tr style="height: 10">  <!-- 设置行高 -->
+    <td align="center" style="padding-right: 50px; vertical-align: middle;">
+      <img src="Assets/figure1.jpg" alt="Figure 1" width="50%" />
+    </td>
+    <td align="center" style="vertical-align: middle;">
+      <img src="Assets/figure2.jpg" alt="Figure 2" width="50%" />
+    </td>
+  </tr>
+</table>
+
 ## Getting Started  
 
 ### Prerequisites  
