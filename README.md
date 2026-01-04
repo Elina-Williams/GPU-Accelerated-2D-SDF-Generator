@@ -53,7 +53,7 @@ Below are example visualisations of generated SDFs:
 ### Installation  
 1. Clone the repository:  
    ```bash  
-   git clone https://github.com/yourusername/metal-sdf-generator.git
+   git clone https://github.com/Elina-Williams/GPU-Accelerated-2D-SDF-Generator.git
 2. Open 2D_SDFGenerator.xcodeproj in Xcode
 3. Build the project (⌘+B) to compile
 4. The compiled executables will be available in the build directory
